@@ -8,16 +8,26 @@
 </head>
 <body>
     <h1>To-Do List</h1>
-    <input type="text" id="taskInput" placeholder="Ajouter une tâche...">
-    <button id="addTaskBtn">Ajouter</button>
+    <input type="text" id="taskInput" placeholder="Add a task...">
+    <button id="addTaskBtn">Add</button>
     <ul id="taskList"></ul>
     <audio id="natureSound" loop autoplay>
-        <source src="nature.mp3" type="audio/mpeg">
+        <source src="nature-birds-singing-217212.mp3" type="audio/mpeg">
         Votre navigateur ne supporte pas l'audio HTML5.
     </audio>
-    <button id="playSound">🔊 Activer le son</button>
+    <button id="playSound">🔇</button>
+
+    <!-- Settings Button -->
+    <div class="settings-container">
+        <button id="settingsBtn">⚙️</button>
+        <div id="settingsMenu" class="dropdown">
+            <a href="#">👤 Account</a>
+            <a href="#" id="changeMode">🎨 Change Mode</a>
+        </div>
+    </div>
+
     <div class="pixel-tree tree1"></div>
-    <div class="pixel-tree tree2"></div>
+    
     
 
     <script src="script.js"></script>

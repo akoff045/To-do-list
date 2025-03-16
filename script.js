@@ -3,12 +3,29 @@ document.getElementById("playSound").addEventListener("click", function() {
     const audio = document.getElementById("natureSound");
     if (audio.paused) {
         audio.play();
-        this.textContent = "🔇 Couper le son";
+        this.textContent = "🔊 On";
     } else {
         audio.pause();
-        this.textContent = "🔊 Activer le son";
+        this.textContent = "🔇Off";
     }
 });
+
+// 🎛 Toggle Settings Menu
+document.getElementById("settingsBtn").addEventListener("click", function () {
+    const menu = document.getElementById("settingsMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
+
+// 📌 Close dropdown if clicked outside
+document.addEventListener("click", function (event) {
+    const menu = document.getElementById("settingsMenu");
+    const button = document.getElementById("settingsBtn");
+
+    if (event.target !== menu && event.target !== button && !menu.contains(event.target)) {
+        menu.style.display = "none";
+    }
+});
+
 
 // 🌱 Select Elements
 const taskInput = document.getElementById("taskInput");
@@ -20,7 +37,7 @@ addTaskBtn.addEventListener("click", function() {
     const taskText = taskInput.value.trim();
     
     if (taskText === "") {
-        alert("Veuillez entrer une tâche !");
+        alert("Enter a task !");
         return;
     }
 
@@ -38,10 +55,10 @@ addTaskBtn.addEventListener("click", function() {
 
     // ✏️ Edit Button
     const editBtn = document.createElement("button");
-    editBtn.textContent = "Modifier";
+    editBtn.textContent = "Modify";
     editBtn.classList.add("edit");
     editBtn.addEventListener("click", function() {
-        const newText = prompt("Modifier la tâche :", taskContent.textContent);
+        const newText = prompt("Modify task:", taskContent.textContent);
         if (newText !== null && newText.trim() !== "") {
             taskContent.textContent = newText;
         }
@@ -49,7 +66,7 @@ addTaskBtn.addEventListener("click", function() {
 
     // ❌ Delete Button
     const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Supprimer";
+    deleteBtn.textContent = "Delete";
     deleteBtn.classList.add("delete");
     deleteBtn.addEventListener("click", function() {
         taskList.removeChild(li);
