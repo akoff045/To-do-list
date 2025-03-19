@@ -26,6 +26,25 @@ document.addEventListener("click", function (event) {
     }
 });
 
+// 🎨 Handle Change Mode Click
+document.getElementById("changeMode").addEventListener("click", function () {
+    alert("🌓 Change Mode feature coming soon!");
+});
+
+// 🌍 Handle Change Language Click
+document.getElementById("changeLanguage").addEventListener("click", function () {
+    const selectedLanguage = prompt("🌍 Choose language: EN / FR / ES").toUpperCase();
+    if (selectedLanguage === "EN") {
+        alert("Language changed to English!");
+    } else if (selectedLanguage === "FR") {
+        alert("Langue changée en Français !");
+    } else if (selectedLanguage === "ES") {
+        alert("Idioma cambiado a Español!");
+    } else {
+        alert("❌ Invalid selection!");
+    }
+});
+
 
 // 🌱 Select Elements
 const taskInput = document.getElementById("taskInput");
